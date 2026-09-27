@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Marrow Coffee Roasters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ec580e; --panel:#282f18; --gold:#eeeee9; --rust:#a45a34;
+    --cream:#161615; --muted:#c9b9a4; --line:#4a3628;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-padding-top:env(safe-area-inset-top,0px);}
+  body{
+    margin:0; background:var(--bg); color:var(--cream);
+    font-family:'IBM Plex Sans', sans-serif; line-height:1.6;
+  }
+  h1,h2{font-family:'Fraunces', serif; font-weight:600; line-height:1.05; margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1000px; margin:0 auto; padding:0 24px;}
+
+  header{
+    display:flex; justify-content:space-between; align-items:center;
+    padding:24px; max-width:1000px; margin:0 auto;
+  }
+  .mark{font-family:'Fraunces', serif; font-size:1.1rem; letter-spacing:.02em;}
+  nav a{margin-left:24px; text-decoration:none; color:var(--muted); font-size:.9rem;}
+  nav a:hover{color:var(--cream);}
+
+  .hero{
+    display:grid; grid-template-columns:1.3fr 1fr; gap:40px; align-items:center;
+    padding:60px 24px 80px; max-width:1000px; margin:0 auto;
+  }
+  .hero h1{font-size:clamp(2.4rem, 5vw, 3.6rem); max-width:11ch;}
+  .hero p{color:var(--muted); max-width:38ch; margin-top:18px; font-size:1.05rem;}
+  .hero .cta{
+    display:inline-block; margin-top:28px; padding:13px 26px;
+    background:var(--gold); color:#241812; font-weight:500;
+    text-decoration:none; border-radius:2px;
+  }
+  .cup{ justify-self:center; }
+  .cup svg{ width:180px; height:auto; }
+
+  section{ padding:56px 24px; border-top:1px solid var(--line); }
+  section .wrap{ max-width:1000px; margin:0 auto; padding:0; }
+  section h2{ font-size:1.8rem; margin-bottom:24px; }
+
+  .about p{ color:var(--muted); max-width:58ch; font-size:1.02rem; }
+
+  .menu-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:0; }
+  .menu-item{ padding:20px 0; border-top:1px solid var(--line); }
+  .menu-item:first-child{ border-top:none; }
+  .menu-grid{ grid-template-columns:1fr; }
+  .menu-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:18px 0; border-top:1px solid var(--line);
+  }
+  .menu-row:first-child{ border-top:none; }
+  .menu-row .name{ font-family:'Fraunces', serif; font-size:1.15rem; }
+  .menu-row .desc{ color:var(--muted); font-size:.92rem; display:block; margin-top:2px; }
+  .menu-row .price{ color:var(--gold); font-family:'Fraunces', serif; }
+
+  .visit{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  .visit .block p{ color:var(--muted); margin:4px 0 0; }
+  .visit .block h3{ font-family:'Fraunces', serif; font-weight:600; font-size:1.1rem; margin-bottom:4px;}
+
+  footer{ padding:30px 24px; text-align:center; color:var(--muted); font-size:.85rem; }
+
+  @media (max-width:720px){
+    .hero{ grid-template-columns:1fr; }
+    .cup{ order:-1; }
+    .visit{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="mark">Marrow</div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#visit">Visit</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>Roasted Monday. Poured today.</h1>
+    <p>A small-batch roastery on the east side, turning green beans from three farms into the coffee your morning was missing.</p>
+    <a class="cta" href="#visit">Find the shop</a>
+  </div>
+  <div class="cup">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 70 h95 v55 a47.5 47.5 0 0 1 -95 0 z" fill="none" stroke="#c9a13b" stroke-width="4"/>
+      <path d="M135 85 h20 a20 20 0 0 1 0 40 h-15" fill="none" stroke="#c9a13b" stroke-width="4"/>
+      <path d="M55 55 q5 -15 -3 -25" fill="none" stroke="#a45a34" stroke-width="3" stroke-linecap="round"/>
+      <path d="M75 55 q5 -15 -3 -25" fill="none" stroke="#a45a34" stroke-width="3" stroke-linecap="round"/>
+      <path d="M95 55 q5 -15 -3 -25" fill="none" stroke="#a45a34" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap about">
+    <h2>What we do</h2>
+    <p>We roast twice a week in small drum batches, so every bag reflects the harvest it came from rather than a house blend that never changes. Beans arrive from Huila, Yirgacheffe, and a single farm in Chiapas we've worked with since we opened.</p>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>On the menu</h2>
+    <div class="menu-row">
+      <div>
+        <span class="name">House filter</span>
+        <span class="desc">Rotating single origin, brewed to order</span>
+      </div>
+      <span class="price">75</span>
+    </div>
+    <div class="menu-row">
+      <div>
+        <span class="name">Cortado</span>
+        <span class="desc">Equal parts espresso and steamed milk</span>
+      </div>
+      <span class="price">100</span>
+    </div>
+    <div class="menu-row">
+      <div>
+        <span class="name">Chiapas pour-over</span>
+        <span class="desc">Bright, stone-fruit, single farm</span>
+      </div>
+      <span class="price">125</span>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap visit">
+    <div class="block">
+      <h3>Address</h3>
+      <p>118 Kestrel Street</p>
+      <p>Open daily, 7am – 4pm</p>
+    </div>
+    <div class="block">
+      <h3>Wholesale &amp; bags</h3>
+      <p>We sell 250g bags in-store and supply beans to four cafés nearby.</p>
+    </div>
+  </div>
+</section>
+
+<footer>Marrow Coffee Roasters</footer>
+
+</body>
+</html>
